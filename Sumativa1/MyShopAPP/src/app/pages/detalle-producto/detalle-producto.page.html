@@ -1,0 +1,27 @@
+<ion-content [fullscreen]="true">
+  <div class="ion-margin">
+    <img alt="" [src]="producto.imagen" />
+  </div>
+  <div class="ion-padding-start">
+    <label>
+      <h1>{{producto.artista}} - {{producto.album}}</h1>
+      <h3>{{producto.version}}  {{producto.precio | currency:'$':'symbol':'0.0-0'}}</h3>
+    </label>
+    <ion-item class="ion-padding-horizontal">
+      <ion-input label="Cantidad" type="number" placeholder="1" [(ngModel)]="cantidad" (ionChange)="validaCantidad()"></ion-input>
+    </ion-item>
+    <ion-item class="ion-padding-horizontal">
+      <ion-input label="Total" [value]="totalItem" [readonly]="true"></ion-input>
+    </ion-item>
+    <ion-button class="ion-margin" color="secondary" shape="default" (click)="agregaraCarro()">Agregar 💙</ion-button>
+  </div>
+  <div class="ion-padding-start">
+    <label>
+      <h2>Descripción</h2>
+      <p>{{producto.descripcion}}</p>
+    </label>
+  </div>
+  <div class="ion-padding-horizontal">
+    <ion-button color="secondary" [routerLink]="['/productos']">Volver</ion-button>
+  </div>
+</ion-content>

@@ -1,20 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="contenedor">
+    <label class="ion-text-center">
+      <h1 class="ion-padding-top">Home</h1>
+    </label>
+  </div>
+  <div class="ion-text-center">
+    <label>
+      <h2>Bienvenid@</h2>
+      <p>a Blue Hour Store 💙</p>
+    </label>
+  </div>
+  <div class="ion-padding">
+    <label class="ion-text-justify">
+      <h4>¿Quienes Somos?</h4>
+      <p>Blue Hour Store es una tienda online que surge como respuesta a nuestras inquietudes y necesidades
+        como fans, con el objetivo de facilitar el acceso y proveer una gran variedad de productos de tus artistas
+        favoritos/as. </p>
+    </label>
+  </div>
+  <div class="ion-padding">
+    <label>
+      <h4>Contactanos</h4>
+      <p>bluehourstore@gmail.com</p>
+      <h4>Envíos</h4>
+      <p>Envíos a todo Chile a través de Starken</p>
+    </label>
+    <ion-button color="secondary" [routerLink]="['/productos']">Iniciar</ion-button>
   </div>
 </ion-content>

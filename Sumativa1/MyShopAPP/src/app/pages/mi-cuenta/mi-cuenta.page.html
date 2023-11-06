@@ -1,0 +1,88 @@
+<ion-content [fullscreen]="true">
+  <div class="contenedor">
+      <label class="ion-text-center">
+        <h1 class="ion-padding-top">Mi Cuenta</h1>
+      </label>
+  </div>
+  <h5 class="ion-text-end ion-padding-end">Usuario</h5>
+  <div class="ion-padding-vertical">
+    <ion-label>
+      <h1 class="ion-padding">Dirección de Envío</h1>
+    </ion-label>
+    <ion-card class="ion-text-center">
+      <ion-card-content>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label position="floating">Nombres</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label position="floating">Apellidos</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label position="floating">Rut</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label class="ion-padding-bottom" position="stacked">Región</ion-label>
+          <ion-select placeholder="Seleccione Región" [(ngModel)]="data1.region">
+            <ion-select-option *ngFor="let reg of regiones" [value]="reg.id">{{reg.region}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label class="label" position="floating">Ciudad</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label class="label" position="floating">Comuna</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label class="label" position="floating">Dirección</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-card-content>
+      <ion-button color="secondary" shape="block">Confirmar</ion-button>
+    </ion-card>
+  </div>
+  <div class="ion-padding-vertical">
+    <ion-label>
+      <h1 class="ion-padding">Dirección de Facturación</h1>
+    </ion-label>
+    <ion-card>
+      <ion-card-content>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label position="floating">Nombres</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label position="floating">Apellidos</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label position="floating">Rut</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label class="ion-padding-bottom" position="stacked">Región</ion-label>
+          <ion-select placeholder="Seleccione Región" [(ngModel)]="data2.region">
+            <ion-select-option *ngFor="let reg of regiones" [value]="reg.id">{{reg.region}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label class="label" position="floating">Ciudad</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label class="label" position="floating">Comuna</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item class="ion-padding-horizontal">
+          <ion-label class="label" position="floating">Dirección</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-card-content>
+      <ion-button color="secondary" shape="block">Confirmar</ion-button>
+    </ion-card>
+  </div>
+</ion-content>
