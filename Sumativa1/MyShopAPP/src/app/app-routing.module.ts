@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   {
     path: 'home',
@@ -35,7 +35,9 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
-  
+  {
+    path: '**', component: NotFoundComponent
+  }, 
 ];
 
 @NgModule({

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { BdserviceService } from 'src/app/services/bdservice.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginPage implements OnInit {
     }
   ]
 
-  constructor(private servicioBD: BdserviceService, private router: Router, private toastController: ToastController) {
+  constructor(private servicioBD: BdserviceService, private storageService: StorageService, private router: Router, private toastController: ToastController) {
   }
 
   ngOnInit() {
@@ -40,7 +41,10 @@ export class LoginPage implements OnInit {
     if (this.user1 != "" && this.pass1 != "") {
       this.servicioBD.buscarUsuario(this.user1, this.pass1).then(user => {
         if (user) {
+          this.storageService.setInicioSesion(this.user1, 'token304')
           this.router.navigate(['/home']);
+          this.user1 = "";
+          this.pass1 = "";
         } else {
           this.user1 = "";
           this.pass1 = "";
