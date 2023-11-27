@@ -36,8 +36,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
+    path: 'apirest',
+    loadChildren: () => import('./pages/apirest/apirest.module').then( m => m.ApirestPageModule)
+  },
+  {
     path: '**', component: NotFoundComponent
-  }, 
+  },   
 ];
 
 @NgModule({

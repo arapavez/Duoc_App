@@ -10,7 +10,7 @@ import { StorageService } from 'src/app/services/storage.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
+  
   user1: string = "";
   pass1: string = "";
   mensaje1 = "usuario y/o contraseña no validos.";
@@ -55,6 +55,8 @@ export class LoginPage implements OnInit {
       this.presentToast('middle', "Por favor, complete los campos solicitados.");
     }
   }
+
+  
 
 
   async presentToast(position: 'top' | 'middle' | 'bottom', mensaje: string) {
