@@ -7,15 +7,15 @@
   </div>
   <ion-searchbar placeholder="Buscar"></ion-searchbar>
   <div class="ion-text-center">
-    <ion-card *ngFor="let p of productos">
-      <img alt="" [src]="p.imagen" />
+    <ion-card *ngFor="let x of arregloProductos"> <!--let x of arregloProductos-->
+      <img alt="" [src]="x.imagen" />
       <ion-card-header>
-        <ion-card-title>{{p.artista}} - {{p.album}}</ion-card-title>
+        <ion-card-title>{{x.nombre_artista}} - {{x.nombre_producto}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>{{p.precio | currency:'$':'symbol':'0.0-0'}}</p>
+        <p>{{x.precio | currency:'$':'symbol':'0.0-0'}}</p>
       </ion-card-content>
-      <ion-button fill="clear" (click)="enviarDetalle(p.id)">Detalles</ion-button>
+      <ion-button fill="clear" (click)="enviarDetalle(x)">Detalles</ion-button> <!-- enviar x -->
     </ion-card>
   </div>
   <div class="ion-padding-horizontal">

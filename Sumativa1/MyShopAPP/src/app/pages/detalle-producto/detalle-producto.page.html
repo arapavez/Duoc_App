@@ -4,8 +4,8 @@
   </div>
   <div class="ion-padding-start">
     <label>
-      <h1>{{producto.artista}} - {{producto.album}}</h1>
-      <h3>{{producto.version}}  {{producto.precio | currency:'$':'symbol':'0.0-0'}}</h3>
+      <h1>{{producto.nombre_artista}} - {{producto.nombre_producto}}</h1>
+      <h3>{{producto.nombre_version}}  {{producto.precio | currency:'$':'symbol':'0.0-0'}}</h3>
     </label>
     <ion-item class="ion-padding-horizontal">
       <ion-input label="Cantidad" type="number" placeholder="1" [(ngModel)]="cantidad" (ionChange)="validaCantidad()"></ion-input>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { BdserviceService } from 'src/app/services/bdservice.service';
 
 @Component({
   selector: 'app-productos',
@@ -8,25 +9,39 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class ProductosPage implements OnInit {
 
-  productos: any[] = [
-    { id: 1, artista: "THE ROSE", album: "DUAL", version: "DAWN", precio: 34000, imagen: "assets/productos/dawn.png", descripcion:"'DUAL' es el segundo Álbum de estudio de larga duración de la banda THE ROSE."},
-    { id: 2, artista: "BTS", album: "WINGS", version: "", precio: 25000, imagen: "assets/productos/wings.jpeg", descripcion:"'WINGS' contiene canciones sobre jóvenes que se enfrentan por primera vez a la tentación y deben reflexionar y agonizar ante ella."},
-    { id: 3, artista: "RM", album: "INDIGO", version: "", precio: 29990, imagen: "assets/productos/indigo.png", descripcion:"El primer Álbum oficial en solitario de RM. 'INDIGO' relata los pensamientos y sentimientos más sinceros de Kim Namjoon."},
+  arregloProductos: any = [
+    {
+      id_producto: '',
+      nombre_artista: '',
+      nombre_producto: '',
+      nombre_version: '',
+      precio: '',
+      imagen: '',
+      descripcion: ''
+    }
   ]
-  constructor(private router: Router) { }
+
+  constructor(private servicioBD: BdserviceService, private router: Router) { }
 
   ngOnInit() {
+    this.servicioBD.dbState().subscribe(res => {
+      if (res) {
+        this.servicioBD.fetchProductos().subscribe(item => {
+          this.arregloProductos = item;
+        })
+      }
+    })
   }
 
-  enviarDetalle(id: number) {
-    let navigationExtras: NavigationExtras = {};
-    let prod = this.productos.find(producto => producto.id === id);
-    if (prod) { 
-      navigationExtras.state = {
-        producto: prod
+  enviarDetalle(x: any) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        producto:x
       }
     }
     this.router.navigate(['/detalle-producto'], navigationExtras);
   }
 
 }
+
+
