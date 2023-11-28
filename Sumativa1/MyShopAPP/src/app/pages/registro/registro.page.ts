@@ -52,7 +52,6 @@ export class RegistroPage implements OnInit {
       if (!this.validaEmail(this.usuario.trim())) {
         this.usuario = "";
         this.password = "";
-        console.log('malo');
         this.presentToast('middle', 'Por favor, ingrese un correo electrónico válido.');
         return;
       }
