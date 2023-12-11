@@ -14,13 +14,17 @@ export class DetalleProductoPage implements OnInit {
   carrito: Array<{item:any, count:number, total:number}> = [];
 
   constructor(private router:Router, private activedRouter: ActivatedRoute) {
-    this.activedRouter.queryParams.subscribe(params => {
+    this.activedRouter.queryParams.subscribe((params) => {
       if(this.router.getCurrentNavigation()?.extras.state){
         this.producto = this.router.getCurrentNavigation()?.extras?.state?.['producto'];
-        this.precio = this.producto.precio;
-        this.totalItem = this.producto.precio;
+        //this.precio = this.producto.precio;
+        //this.totalItem = this.producto.precio;
+        if (this.producto) {
+          this.precio = this.producto.precio;
+          this.totalItem = this.producto.precio;
+        }
       }
-    })
+    });
    }
 
   ngOnInit() {
